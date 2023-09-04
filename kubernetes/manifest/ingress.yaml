@@ -4,6 +4,7 @@ data:
 kind: Secret
 metadata:
   name: basic-auth-secret
+  namespace: loki
 type: Opaque
 ---
 apiVersion: networking.k8s.io/v1
@@ -19,6 +20,7 @@ metadata:
   labels:
     app: ingress
   name: loki-ingress
+  namespace: loki
 spec:
   rules:
     - host: loki.klovercloud.io
